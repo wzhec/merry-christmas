@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>Wang ZengHui ♥ Wang YinShu</title>
+  <link rel='stylesheet' href='https://unpkg.com/splitting/dist/splitting.css'>
+  <link rel='stylesheet' href='https://unpkg.com/splitting/dist/splitting-cells.css'><link rel="stylesheet" href="./style.css">
+  <style>
+  .santa {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    padding: 60px 0 30px;
+    border-radius: 5px;
+    animation: santa 10s linear 3s infinite alternate;;
+  }
+  .santa-body {
+    font-size: 80px;
+    color: #f91047;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+    width: 1em;
+    height: 1em;
+    background-color: currentColor;
+    -webkit-box-shadow: inset 0 -0.25em rgba(0, 0, 0, 0.1);
+    box-shadow: inset 0 -0.25em rgba(0, 0, 0, 0.1);
+    border-radius: 50%;
+    -webkit-transform-origin: center bottom;
+    -ms-transform-origin: center bottom;
+    transform-origin: center bottom;
+    -webkit-animation: balance alternate infinite 2s ease-in-out;
+    animation: balance alternate infinite 2s ease-in-out ;
+  }
+
+  .santa-head {
+    font-size: .4em;
+    width: 1em;
+    height: 1.9em;
+    background-color: white;
+    border-radius: .5em;
+    -webkit-transform: translateY(-1em);
+    -ms-transform: translateY(-1em);
+    transform: translateY(-1em);
+    position: relative;
+  }
+
+  .santa-head::before {
+    content: '';
+    width: 1em;
+    height: .375em;
+    display: block;
+    background-color: #ff9876;
+    position: absolute;
+    left: 0;
+    top: .65em;
+  }
+
+  .santa-ear {
+    background-color: #fc8363;
+    width: .1em;
+    height: .3em;
+    position: absolute;
+    top: .75em;
+  }
+
+  .santa-ear:nth-of-type(1) {
+    border-radius: .05em 0 0 .05em;
+    left: -0.1em;
+  }
+
+  .santa-ear:nth-of-type(2) {
+    border-radius: 0 .05em .05em 0;
+    right: -0.1em;
+  }
+
+
+  .santa-hat {
+    content: '';
+    width: 1em;
+    height: .15em;
+    position: absolute;
+    -webkit-transform: scale(1.1);
+    -ms-transform: scale(1.1);
+    transform: scale(1.1);
+    top: .5em;
+    left: 0;
+    background-color: white;
+  }
+
+  .santa-hat::before {
+    content: '';
+    display: block;
+    width: 1em;
+    height: .5em;
+    background: #f91047;
+    border-radius: .5em .5em 0 0;
+    z-index: 2;
+    position: absolute;
+    top: -0.5em;
+  }
+
+  .santa-hat::after {
+    content: '';
+    width: .25em;
+    height: .25em;
+    display: block;
+    background-color: white;
+    border-radius: 50%;
+    position: absolute;
+    z-index: 0;
+    top: -0.72em;
+    right: 0;
+    -webkit-box-shadow: -0.2em .2em 0 .12em rgba(0, 0, 0, 0.2), -0.2em .2em 0 .12em #f91047;
+    box-shadow: -0.2em .2em 0 .12em rgba(0, 0, 0, 0.2), -0.2em .2em 0 .12em #f91047;
+  }
+
+  .santa-eye {
+    width: .12em;
+    height: .12em;
+    background-color: black;
+    border-radius: 50%;
+    position: absolute;
+    top: .76em;
+    left: .2em;
+  }
+
+  .santa-eye + .santa-eye {
+    left: auto;
+    right: .2em;
+  }
+
+  .santa-nose {
+    width: .12em;
+    height: .22em;
+    background-color: #f24c4c;
+    border-radius: 0 0 .12em .12em;
+    position: absolute;
+    top: .84em;
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    transform: translateX(-50%);
+  }
+
+  .santa-mouth {
+    width: .18em;
+    height: .1em;
+    border-bottom-right-radius: 5vw;
+    border-bottom-left-radius: 5vw;
+    margin-top: .3em;
+    background-color: black;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    -webkit-animation: hohoho 4s linear forwards infinite;
+    animation: hohoho 4s linear forwards infinite;
+  }
+  .santa-leg {
+    background-color: #fc8363;
+    width: .1em;
+    height: .3em;
+    position: absolute;
+    top: .8em;
+  }
+  .santa-leg::after{
+    z-index: -10;
+  }
+
+  .santa-leg:nth-of-type(1) {
+    border-radius: .05em 0 0 .05em;
+    left: 0.1em;
+    transform: rotate(75deg);
+  }
+
+  .santa-leg:nth-of-type(2) {
+    border-radius: 0 .05em .05em 0;
+    right: 0.1em;
+    transform: rotate(-75deg);
+  }
+
+  @-webkit-keyframes santa {
+    0%{
+      left:0;
+    }
+    100%{
+      left: 80%;
+    }
+  }
+  @keyframes santa {
+    0%{
+      left:0;bottom:0
+    }
+    100%{
+      left: 80%;bottom: 0;
+    }
+  }
+  @-webkit-keyframes hohoho {
+    0%, 10%, 20%, 40%, 100% {
+      width: .18em;
+      height: .1em;
+      border-bottom-right-radius: 1vw;
+      border-bottom-left-radius: 1vw;
+    }
+    5%, 15%, 25%, 35% {
+      width: .15em;
+      height: .2em;
+      border-radius: 50%;
+    }
+  }
+
+  @keyframes hohoho {
+    0%, 10%, 20%, 40%, 100% {
+      width: .18em;
+      height: .1em;
+      border-bottom-right-radius: 1vw;
+      border-bottom-left-radius: 1vw;
+    }
+    5%, 15%, 25%, 35% {
+      width: .15em;
+      height: .2em;
+      border-radius: 50%;
+    }
+  }
+
+  @-webkit-keyframes balance {
+    from {
+      -webkit-transform: rotate(-4deg);
+      transform: rotate(-4deg);
+    }
+    to {
+      -webkit-transform: rotate(4deg);
+      transform: rotate(4deg);
+    }
+  }
+
+  @keyframes balance {
+    from {
+      -webkit-transform: rotate(-4deg);
+      transform: rotate(-4deg);
+    }
+    to {
+      -webkit-transform: rotate(4deg);
+      transform: rotate(4deg);
+    }
+  }
+
+  </style>
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<div class="container">
+  <div class="text" data-splitting="">Happy Every Day</div>
+  <div class="snow"></div>
+  <div class="presents">
+    <div class="la-shoushi">
+      <img src="images/gesture.png" alt="👆">
+    </div>
+    <div class="present orange">
+      <div class="lid"></div>
+      <div class="box"></div>
+      <div class="bow"></div>
+      <div class="ribbon"></div>
+    </div>
+    <div class="present blue">
+      <div class="lid"></div>
+      <div class="box"></div>
+      <div class="bow"></div>
+      <div class="ribbon"></div>
+    </div>
+    <div class="present green">
+      <div class="lid"></div>
+      <div class="box"></div>
+      <div class="bow"></div>
+      <div class="ribbon"></div>
+    </div>
+  </div>
+</div>
+<div class="la-page">
+  <div class="la-model">
+    <div class="la-container">
+      <div class="video">
+<!--        <video src="v.f20.mp4" width="100%" height="225" controls="controls"></video>-->
+      </div>
+      <div class="title">
+        🤞愿我的小可爱每天开心
+        <br>
+        永远💕爱你💕的 <span style="text-decoration:line-through;">宝宝(划掉)</span>老公
+        <br>
+      </div>
+      <div class="close btn"> Me Too</div>
+    </div>
+  </div>
+</div>
+<div class="santa">
+  <div class="santa-body">
+    <div class="santa-head">
+      <div class="santa-ear"></div>
+      <div class="santa-ear"></div>
+      <div class="santa-hat"></div>
+      <div class="santa-eye"></div>
+      <div class="santa-eye"></div>
+      <div class="santa-nose"></div>
+      <div class="santa-mouth"></div>
+    </div>
+<div class="santa-foot">
+    <div class="santa-leg"></div>
+    <div class="santa-leg"></div>
+</div>
+  </div>
+</div>
+<!-- partial -->
+<script src='https://cdn.jsdelivr.net/mojs/0.288.1/mo.min.js'></script>
+<script src='https://cdn.jsdelivr.net/mojs-player/0.43.15/mojs-player.min.js'></script>
+<script src='https://unpkg.com/splitting/dist/splitting.min.js'></script>
+<script src="./script.js"></script>
+<script src="https://cdn.staticfile.org/jquery/3.5.1/jquery.min.js"></script>
+<script type="application/javascript">
+$(".presents, .btn.close").click(function() {
+  $(".la-page").toggleClass("cur");
+})
+</script>
+</body>
+</html>
