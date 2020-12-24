@@ -257,13 +257,16 @@
       transform: rotate(4deg);
     }
   }
+  .splitting .huadiao .word, .splitting .huadiao .char {
+    text-decoration: line-through;
+  }
 
   </style>
 </head>
 <body>
 <!-- partial:index.partial.html -->
 <div class="container">
-  <div class="text" data-splitting="">Happy Every Day</div>
+  <div class="text" data-splitting="">May You Be Happy Every Day! Baby!</div>
   <div class="snow"></div>
   <div class="presents">
     <div class="la-shoushi">
@@ -293,13 +296,27 @@
   <div class="la-model">
     <div class="la-container">
       <div class="video">
-<!--        <video src="v.f20.mp4" width="100%" height="225" controls="controls"></video>-->
+        <video id="lovevideo" src="love.mp4" width="100%" height="225" controls="controls">
+          宝贝儿我爱你，你的浏览器不支持HTML5无法播放我给你的视频呢。换个浏览器就好啦
+        </video>
       </div>
       <div class="title">
-        🤞愿我的小可爱每天开心
+        💕💕
+        <div class="first" data-splitting="">
+          愿我的小可爱每天开心
+<!--        </div>-->
         <br>
-        永远💕爱你💕的 <span style="text-decoration:line-through;">宝宝(划掉)</span>老公
+<!--        <div class="second" data-splitting="">-->
+          <span>永远爱你的</span>
+          <br>
+          <span class="huadiao">宝宝(划掉)</span>
+          <span>老公</span>
+        </div>
+        🤞
         <br>
+        <div class="second" data-splitting="">
+<!--          嫁给我好吗?-->
+        </div>
       </div>
       <div class="close btn"> Me Too</div>
     </div>
@@ -326,12 +343,22 @@
 <script src='https://cdn.jsdelivr.net/mojs/0.288.1/mo.min.js'></script>
 <script src='https://cdn.jsdelivr.net/mojs-player/0.43.15/mojs-player.min.js'></script>
 <script src='https://unpkg.com/splitting/dist/splitting.min.js'></script>
-<script src="./script.js"></script>
+<script src="./script.js" defer></script>
 <script src="https://cdn.staticfile.org/jquery/3.5.1/jquery.min.js"></script>
 <script type="application/javascript">
 $(".presents, .btn.close").click(function() {
   $(".la-page").toggleClass("cur");
+  console.log($(".la-page").hasClass("cur"));
+  var myVideo = document.getElementById("lovevideo");
+  if($(".la-page").hasClass("cur")){
+    myVideo.play();
+  }else{
+      myVideo.pause();
+  }
 })
+</script>
+
+<script>
 </script>
 </body>
 </html>

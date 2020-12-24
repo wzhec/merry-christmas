@@ -1,4 +1,19 @@
-@import url("https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap");
+/*@import url("https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap");*/
+
+/* fredoka-one-regular */
+@font-face {
+    font-family: 'Fredoka One';
+    font-style: normal;
+    font-weight: regular;
+    src: url('//lib.baomitu.com/fonts/fredoka-one/fredoka-one-regular.eot'); /* IE9 Compat Modes */
+    src: local('Fredoka One'), local('FredokaOne-Normal'),
+    url('//lib.baomitu.com/fonts/fredoka-one/fredoka-one-regular.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+    url('//lib.baomitu.com/fonts/fredoka-one/fredoka-one-regular.woff2') format('woff2'), /* Super Modern Browsers */
+    url('//lib.baomitu.com/fonts/fredoka-one/fredoka-one-regular.woff') format('woff'), /* Modern Browsers */
+    url('//lib.baomitu.com/fonts/fredoka-one/fredoka-one-regular.ttf') format('truetype'), /* Safari, Android, iOS */
+    url('//lib.baomitu.com/fonts/fredoka-one/fredoka-one-regular.svg#FredokaOne') format('svg'); /* Legacy iOS */
+}
+
 :root{
     --char-index:2;
     --box-blue:1;
@@ -49,6 +64,18 @@ body {
     animation: slide-in 1s cubic-bezier(0.5, 0, 0.5, 1) both;
     -webkit-animation-delay: calc(60ms * var(--char-index));
     animation-delay: calc(60ms * var(--char-index));
+}
+.cur .first .char {
+    -webkit-animation: slide-in 1s cubic-bezier(0.5, 0, 0.5, 1) both;
+    animation: slide-in 1s cubic-bezier(0.5, 0, 0.5, 1) both;
+    -webkit-animation-delay: calc(60ms * var(--char-index));
+    animation-delay: calc(60ms * var(--char-index));
+}
+.cur .second .char {
+    -webkit-animation: slide-in 1s cubic-bezier(0.5, 0, 0.5, 1) backwards;
+    animation: slide-in 1s cubic-bezier(0.5, 0, 0.5, 1) backwards;
+    -webkit-animation-delay: calc(800ms * var(--char-index));
+    animation-delay: calc(800ms * var(--char-index));
 }
 
 @-webkit-keyframes slide-in {
